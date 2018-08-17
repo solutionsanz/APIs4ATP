@@ -1,0 +1,13 @@
+<html>
+
+    <body>
+
+        <form action="uploadfile" method="post" enctype="multipart/form-data">
+            Select CSV file to upload:
+            <input type="file" name="file" id="file">
+            <input type="submit" value="Upload" name="submit">
+        </form>
+
+    </body>
+
+</html>

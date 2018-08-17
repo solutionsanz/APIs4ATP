@@ -1,0 +1,29 @@
+{
+  "name": "APIs4ATP",
+  "version": "1.0.0",
+  "description": "APIs 4 Autonomous DB project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "swagger",
+    "api"
+  ],
+  "author": "Carlos Rodriguez Iturria",
+  "license": "MIT",
+  "engines" : { "node" : ">=4.1.0 <5.5.0" },
+  "dependencies": {
+    "body-parser": "^1.6.5",
+    "express": "*",    
+    "mongodb": "^2.2.24",
+    "monk": "^4.0.0",
+    "js-yaml": "^3.8.4",
+    "formidable": "*",
+    "fs": "*",
+    "csvtojson": "*",
+    "util": "*",
+    "oracledb": "*"
+  }
+}
+

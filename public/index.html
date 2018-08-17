@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+	
+	<title>Acorn Project</title>
+	<!-- set your website meta description and keywords -->
+	<meta name="description" content="Explore the power of APIs with Acorn">
+	<meta name="keywords" content="api apis acorn oracle integration gateway">
+	<!-- set your website favicon icon -->
+	<link href="favicon.ico" rel="icon">
+	
+	<!-- Bootstrap Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- Font Awesome Stylesheets -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">	
+	<!-- bootstrap-datepicker Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap-datepicker3.min.css">
+	<!-- Template Main Stylesheets -->
+	<link rel="stylesheet" href="css/signup-form.css" type="text/css">
+
+	<!-- My own Modal Template Stylesheets -->
+	<link rel="stylesheet" href="css/myModalTemplate.css" type="text/css">	
+	
+</head>
+
+<body>
+	<div class="signupForm-section wrapper">
+		<div class="display-table">
+			<div class="display-table-cell">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-wrap clearfix">
+								<h2 class="form-title">Experience APIs with Acorn</h2>
+								<div class="col-sm-6 col-sm-offset-3">
+									<form id="signUpForm" name="signUpForm" class="signUpForm" enctype="multipart/form-data">
+										<div class="section-wrap">
+											
+											<div id="section-1" class="section">
+												<h3 class="section-title">Upload CSV data</h3>
+												<fieldset>													
+													<br>
+													<div class="help-block with-errors mandatory-error"></div>	
+													<div class="col-sm-12">														
+														<div class="form-group validuname">
+															<input class="form-control" name="collection" id="collection" type="text" placeholder="Collection name" required data-error="Please enter Collection name">
+															<div class="input-group-icon"><i class="fa fa-address-card-o"></i></div>
+														</div>
+														<div class="form-group validuname">															
+															<input class="form-control" name="file" id="file" type="file">
+															<div class="input-group-icon"><i class="fa fa-file-excel-o"></i></div>															
+														</div>	
+														<center><b><font size="4" id="uploadFileLabel"></font></b></center>
+														<textarea readonly style="display: none;"  cols="50" class="form-control" name="jsonPayload" id="jsonPayload"></textarea>
+														<hr>															
+														<div id="mgsFormSubmit" class="hidden"></div>
+														<div id="final-step-buttons" class="form-group  signUpForm-step-4">																													
+															<button id="Submit" class="btn btn-custom pull-right" type="button" onclick="handleUpload()">Upload</button>
+														</div>
+													</div>	
+												</fieldset>
+											</div><!-- end section -->											
+											
+										</div><!-- end section-wrap -->
+									</form>
+								</div><!-- end col-sm-6 -->
+							</div><!-- end form-wrap -->
+						</div><!-- end col-sm-12 -->
+					</div><!-- end row -->				
+
+				</div><!-- end container -->
+			</div><!-- end display-table-cell -->
+		</div><!-- end display-table -->
+	</div><!-- end wrapper -->
+
+
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+			
+		<!-- The Close Button -->
+		<span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+		
+		<!-- Modal Content (The Image) -->
+		<img class="modal-content" id="img01">
+		
+		<!-- Modal Caption (Image Text) -->
+		<div id="caption"></div>
+	</div>
+
+	
+	<!-- jQuery Library -->
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<!-- bootstrap-datepicker Js -->
+    <script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+	<!-- Form validator Js -->
+	<script src="js/validator.min.js"></script>
+	<!-- Template main Js -->
+	<!--script src="js/signup-form.js"></script-->
+	
+
+	<!-- My scripts-->
+	<!-- MyModal functions -->
+	<script src="js/myModalScript.js"></script>		
+
+	<!-- API functions -->
+	<script src="js/shared-libs.js"></script>
+	<script>
+		console.log("Loading upload function");
+	</script>	
+
+</body>
+</html>

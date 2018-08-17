@@ -1,0 +1,1 @@
+rm -rf $HOME/t && mkdir -p $HOME/t && cp -r /vagrant/. $HOME/t/

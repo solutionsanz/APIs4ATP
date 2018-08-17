@@ -1,0 +1,171 @@
+swagger: "2.0"
+info:
+  description: "This project provides a platform to easily read and write data coming from agnostic APIs facing data."
+  version: "2.1"
+  title: "Acorn Project APIs"
+  #termsOfService: "http://apismadeeasy.cloud/terms"
+  contact:
+    email: "carlos.rodriguez.iturria@oracle.com"
+  #license:
+  #  name: "Apache 2.0"
+  #  url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+#basePath: "/"
+#host: "localhost:3000"
+basePath: "/"
+host: "XXX"
+tags:
+- name: "Records"
+  description: "Records can be anything that needs to be stored, retrieved, updated or deleted."
+  externalDocs:
+    description: "Find out more"
+    url: "http://apismadeeasy.cloud"
+schemes:
+- "http"
+- "https"
+security:
+  - X-MyAPI-Key: []
+paths:
+  /records:
+    get:
+      tags:
+      - "Records"
+      summary: "Finds All Records within a Collection Name and an optional matching criteria."
+      description: "Gets Records by searching text, (optional)"
+      operationId: "getRecords"
+      produces: 
+        - "application/json"
+      parameters:
+      - name: "collectionName"
+        in: "query"
+        description: "Collection Name that contains your records to be retrieved."
+        required: true
+        type: "string"
+        x-example: 'Students' 
+      - name: "filterName"
+        in: "query"
+        description: "Field name used to filter records. For example, PatiendId, StudentName, Age, Email, etc."
+        required: false
+        type: "string"
+        x-example: 'Email' 
+      - name: "filterValue"
+        in: "query"
+        description: "Value used in conjunction with the filterName query parameter used to filter records. For example, 101, John, 56, john@uni.edu.au, etc."
+        required: false
+        type: "string" 
+        x-example: 'john@uni.edu.au'
+      responses:
+        200:
+          description: "Returns the full list of Records based on collection name and optional matching criteria."
+          schema:
+            $ref: "#/definitions/OutputSysRecordsCollection"
+    post:
+      tags:
+      - "Records"
+      summary: "Creates a new Collection of Records or if already present, it appends records into it."
+      description: "Returns the Id and the full content of the Collection Name"
+      operationId: "postRecords"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Array of Record objects that need to be added. If the Collection name already exists, it will simply append the given records to the existing list of records."
+        required: true
+        schema:
+          $ref: "#/definitions/InputSysRecordsCollection"
+      responses:
+        200:
+          description: "Returns the Id and the just created Collection of Records."
+          schema:
+            $ref: '#/definitions/OutputSysRecordsCollection'
+
+  /records/{id}:
+    delete:
+      tags:
+      - "Records"
+      summary: "Deletes individual records based on a list of Id(s)"
+      description: "Returns Id(s) of deleted records."
+      operationId: "deleteRecords"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "Id for record to be removed."
+        required: true
+        type: "string"
+        x-example: '1a23ee45f678af121bfe1245aa'      
+      - name: "collectionName"
+        in: "query"
+        description: "Collection Name that contains your records to be retrieved."
+        required: true
+        type: "string"
+        x-example: 'Students'
+      responses:
+        200:
+          description: "Returns Id(s) of successfully deleted records."
+          schema:
+            $ref: "#/definitions/IdRecord"
+          
+securityDefinitions:
+  X-MyAPI-Key:
+    type: "apiKey"
+    name: "x-api-key"
+    in: "header"
+definitions:
+  InputSysRecordsCollection:
+    type: "object"
+    required:
+    - "CollectionName"
+    - "Records"
+    properties:
+      CollectionName:
+        type: "string"
+        example: "Customers"
+      Records:
+        type: "array"
+        items:
+          $ref: "#/definitions/InputRecord"
+  OutputSysRecordsCollection:
+    type: "object"
+    required:
+    - "CollectionName"
+    - "Records"
+    properties:
+      CollectionName:
+        type: "string"
+        example: "Customers"
+      Records:
+        type: "array"
+        items:
+          $ref: "#/definitions/OutputRecord"          
+  InputRecord:
+    type: "object"
+    properties:
+      AnyElement:
+        type: "string"
+        example: "John Oliver"
+  OutputRecord:
+    type: "object"
+    required:
+    - "_id"
+    properties:
+      _id:
+        type: "string"
+        example: "12345678ABCDEF"
+      AnyElement:
+        type: "string"
+        example: "John Oliver"
+  IdRecord:
+    type: "object"
+    required:
+    - "_id"
+    properties:
+      _id:
+        type: "string"
+        example: "12345678ABCDEF"         
+externalDocs:
+  description: "Find out more about our APIs"
+  url: "http://apisMadeEasy.cloud"

@@ -1,0 +1,23 @@
+{
+
+    "memory": "1G",
+    "instances": "1",
+
+    "environment": {
+
+        "API_GW_ENABLED":"XXX",
+        "API_GW_SERVER":"XXX",
+        "API_GW_BASEURL":"XXX",
+        "API_GW_PORT":"XXX",
+        "API_GW_USERNAME":"XXX",
+        "API_GW_PASSWORD":"XXX",
+        "MONGODB_SERVER":"XXX",
+        "MONGODB_USERNAME":"XXX",
+        "MONGODB_PASSWORD":"XXX",
+        "MONGODB_PORT":"XXX",
+        "SMS_SERVER":"XXXX",
+        "SMS_PORT":"XXX",
+        "SMS_PATH":"XXX"
+    }
+
+}

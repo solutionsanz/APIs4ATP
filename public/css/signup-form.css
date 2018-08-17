@@ -1,0 +1,514 @@
+/*
+|----------------------------------------------------------------------------
+|	SignupForm - Multi Step Signup HTML5 Ajax Form main CSS
+|	Author: MGScoder
+|	Version: 1.0
+|	color: #0379ca
+|----------------------------------------------------------------------------
+*/
+
+.signupForm-section{
+	background-attachment: fixed;
+	background-image: url(../images/bg.jpg);
+	background-position: center center;
+	background-repeat:  no-repeat;
+	background-size:  cover;
+    margin: 0 auto;
+    padding: 0;
+	position: relative;
+    width: 100%;
+	z-index: 1;
+}
+.signupForm-section::before{
+	background-color: #fff;
+	background-image: url(../images/bg_mask.png);
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	opacity: 0.7;
+	top: 0;
+    width: 100%;
+	z-index: -1;
+}
+.column {
+	margin: 0 0 50px;
+}
+.display-table {
+    display: table;
+    height: 100vh;
+    width: 100%;
+}
+.display-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+.form-wrap {
+    background-color: rgba(250, 250, 250, 0.9);
+    border-radius: 4px;
+    margin: 30px auto;
+    padding: 30px;
+}
+h2.form-title {
+    font-size: 32px;
+    font-weight: bold;
+	color: #0379ca;
+    margin: 50px 0;
+    padding: 0 30px;
+    text-align: center;
+}
+h3.section-title {
+	background-color: rgba(62, 62, 62, 0.9);
+    border: 1px solid rgba(62, 62, 62, 0.9);
+    border-radius: 10px;
+	color: #fff;
+	font-weight: bold;
+    padding: 10px;
+    margin: 50px 0;
+    text-align: center;
+}
+h3.section-form-title {
+	color: #0379ca;
+    border-bottom: 5px solid #ddd;
+	font-weight: bold;
+	max-width: 320px;
+    margin: 50px auto;
+	padding-bottom: 5px;
+    text-align: center;
+}
+.section-wrap {
+    overflow: hidden;
+    position: relative;
+}
+.section {
+    overflow: hidden;
+	-webkit-transition: all 0.23s ease-in-out 0s;
+    -moz-transition: all 0.23s ease-in-out 0s;
+    -ms-transition: all 0.23s ease-in-out 0s;
+    -o-transition: all 0.23s ease-in-out 0s;
+    transition: all 0.23s ease-in-out 0s;
+}
+.section.slide-right {
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    width: 100%;
+}
+.section.slide-left {
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+	-webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+.section.open {
+    height: auto;
+    opacity: 1;
+}
+
+/*Form Step*/
+.form-layer-steps {
+	margin: 0 0 50px;
+    overflow: hidden;
+    position: relative;
+}
+.form-layer-progress {
+    background-color: #ddd;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 26px;
+    width: 100%;
+}
+.form-layer-progress-line {
+    background-color: #0379ca;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.form-layer-tolal-steps-4 .form-layer-step {
+    float: left;
+    padding: 0 5px;
+    position: relative;
+	text-align: center;
+    width: 33%;
+}
+.form-layer-step-icon {
+    background-color: #ddd;
+    border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 4px;
+    width: 40px;
+	text-align: center;
+}
+.form-layer-step.activated .form-layer-step-icon {
+    background-color: #fff;
+    border: 1px solid #0379ca;
+    color: #0379ca;
+    line-height: 38px;
+}
+.form-layer-step.active .form-layer-step-icon {
+    background-color: #0379ca;
+    font-size: 22px;
+    height: 48px;
+    line-height: 48px;
+    margin-top: 0;
+    width: 48px;
+}
+
+/*Progress Bar*/
+.progress {
+	background-color: rgba(62, 62, 62, 0.3);
+    margin: 0 0 50px;
+	padding: 0;
+	position: relative;
+	height: 32px;
+}
+.progress-bar {
+    background-color: rgba(3, 121, 202, 0.99);
+}
+.progress-bar-text {
+    font-size: 16px;
+	font-weight: bold;
+    left: 50%;
+    margin-left: -38px;
+	padding: 6px 0;
+    position: absolute;
+}
+
+/*Form*/
+form#multistepForm {
+    margin: 0 0 20px;
+}
+#multistepForm h4 {
+    font-size: 16px;
+    font-weight: bold;
+	margin: 10px 0 15px;
+}
+.form-group {
+    margin: 0 0 30px;
+	position: relative;
+}
+.form-control {
+	padding-left: 50px;
+	border: 1px solid #3e3e3e;
+}
+.input-group-icon {
+    background-color: #3e3e3e;
+    border: 0 none;
+    border-radius: 4px 0 0 4px;
+    color: #fff;
+    display: table-cell;
+    font-size: 14px;
+    height: 100%;
+    padding: 5px 7px 7px;
+    text-align: center;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 40px;
+    position: absolute;
+    top: 0;
+}
+#multistepForm .has-error .form-control {
+    border-color: #ce0606;
+}
+#multistepForm .has-error .input-group-icon {
+    background-color: #ce0606;
+    color: #ffffff;
+}
+#multistepForm .form-control:focus, #multistepForm .has-error .form-control:focus {
+	border-color: #0311ca;
+	box-shadow: 0 1px 1px rgba(3, 17, 202, 0.075) inset, 0 0 8px rgba(3, 17, 202, 0.6);
+}
+#multistepForm .form-control:focus + .input-group-icon, #multistepForm .has-error .form-control:focus + .input-group-icon{
+    background-color: #0311ca;
+    color: #fff;
+}
+.help-block {
+    color: #ce0606;
+    margin: 0;
+    position: absolute;
+    bottom: -30px;
+}
+.validagree .help-block.with-errors {
+    bottom: -30px;
+}
+.help-block.with-errors.mandatory-error {
+    bottom: auto;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+}
+.text-danger {
+    color: #ce0606;
+    font-size: 20px;
+}
+#profile-Image img {
+    border: 1px solid #ddd;
+	border-radius: 5px;
+    max-width: 150px;
+}
+
+/*attachment*/
+.section .form-group.attachmentFile {
+	display: table;
+	margin: 15px 0 40px;
+}
+.section .input-group-btn ~ .form-control {
+    border-radius: 0 4px 4px 0;
+    cursor: not-allowed;
+    padding-left: 10px;
+}
+.section .input-group-btn > .btn {
+    background-color: #3e3e3e;
+    border: 1px solid #3e3e3e;
+    border-radius: 4px 0 0 4px;
+    color: #fff;
+    height: 34px;
+    padding: 4.5px 14px;
+}
+.attachmentFile .input-group-btn:first-child > .btn, .input-group-btn:first-child > .btn-group {
+    margin-left: 0;
+}
+.section .input-group-btn > .btn > input[type="file"] {
+    display: none;
+}
+
+/*select box*/
+#multistepForm select {
+	background-color: transparent;
+	display: inline-block;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+#multistepForm select {
+	background-image: linear-gradient(45deg, transparent 50%, #3e3e3e 50%),
+		linear-gradient(135deg, #3e3e3e 50%, transparent 50%),
+		radial-gradient(transparent 66%, transparent 66%);
+	background-position: calc(100% - 18px) calc(1em + 2px),
+		calc(100% - 13px) calc(1em + 2px),
+		calc(100% - .5em) .5em;
+	background-size: 5px 6px, 6px 5px, 1.5em 1.5em;
+	background-repeat: no-repeat;
+}
+#multistepForm select:focus {
+	background-image: linear-gradient(45deg, transparent 50%, #0379ca 50%),
+		linear-gradient(135deg, #0379ca 50%, transparent 50%),
+		radial-gradient(transparent 66%, transparent 66%);
+}
+
+/*
+|----------------------------------------------------------------------------
+| Math Captcha
+|----------------------------------------------------------------------------
+*/
+#humanCheckCaptchaBox {
+    font-weight: bold;
+}
+#humanCheckCaptchaBox, #humanCheckCaptchaInput, #firstDigit, #secondDigit,  #mathfirstnum, #mathsecondnum {
+    display: inline;
+}
+#humanCheckCaptchaInput.form-control {
+    height: 30px;
+    margin-left: 10px;
+    padding: 4px;
+    text-align: center;
+    width: 45px;
+}
+#firstDigit #mathfirstnum, #secondDigit #mathsecondnum {
+	border: none;
+	box-shadow: none;
+    width: 30px;
+    height: 30px;
+	padding: 0;
+    pointer-events: none;
+    text-align: center;
+}
+
+/*
+|----------------------------------------------------------------------------
+| Button
+|----------------------------------------------------------------------------
+*/
+.btn-default {
+    background-color: transparent;
+    border-color: #3e3e3e;
+    color: #222;
+}
+.form-control[disabled], .form-control[readonly], .form-control {
+    background-color: transparent;
+    border: 1px solid #3e3e3e;
+}
+.btn {
+    overflow: hidden;    
+	font-size:16px;
+	padding: 6px 20px;
+}
+.btn-custom {
+    background-color: #3e3e3e;
+	border: 1px solid #3e3e3e;
+    box-shadow: 0 0 1px transparent;
+	color: #fff;
+    display: inline-block;
+    position: relative;
+	text-transform: capitalize;
+    -webkit-transform: perspective(1px) translateZ(0px);
+    -moz-transform: perspective(1px) translateZ(0px);
+    -ms-transform: perspective(1px) translateZ(0px);
+    -o-transform: perspective(1px) translateZ(0px);
+    transform: perspective(1px) translateZ(0px);
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -ms-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    transition: color 0.3s;
+    vertical-align: middle;
+}
+.btn-custom::before {
+    background-color: #0311ca;
+    border-color: #0311ca;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+	-webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50% 50% 0;
+	-moz-transform-origin: 50% 50% 0;	
+	-ms-transform-origin: 50% 50% 0;	
+	-o-transform-origin: 50% 50% 0;	
+    transform-origin: 50% 50% 0;
+	-webkit-transition: transform 0.3s ease-out;
+    -moz-transition: transform 0.3s ease-out;
+    -ms-transition: transform 0.3s ease-out;
+    -o-transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+    z-index: -1;
+}
+.btn-custom:hover, .btn-custom:focus, .btn-custom:active {
+    border-color: #0311ca;
+    color: #fff;
+}
+.btn-custom:hover::before, .btn-custom:focus::before, .btn-custom:active::before {
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+	transform: scaleX(1);
+}
+.btn.btn-default.disable {
+    pointer-events: none;
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+	opacity: 1;
+}
+
+/*
+|----------------------------------------------------------------------------
+| Review page
+|----------------------------------------------------------------------------
+*/
+.review-submit-section h4 {
+    background-color: transparent;
+    border: 1px solid #3e3e3e;
+    border-radius: 6px;
+    color: #222;
+    padding: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+.review-submit-section h5 {
+    background-color: rgba(62, 62, 62, 0.7);
+    border-radius: 6px;
+    color: #fff;
+    padding: 10px;
+	margin: 0 0 20px;
+	font-size: 22px;
+	text-align: center;
+}
+.review-submit-section p > strong {
+	width: 50%;
+	float: left;
+    color: #0379ca;
+	padding-right: 10px;
+	text-align: right;
+}
+.review-submit-section p > span {
+	width: 50%;
+	float: left;
+}
+.review-submit-section p {
+	clear: both;
+	text-align: left;
+}
+p#AggreData {
+    margin: 0 0 40px;
+}
+.section-info-box strong {
+    padding-right: 5px;
+}
+
+/************ inline calendar **************/
+.datepicker-inline {
+    border: 1px solid;
+    margin: 0 auto;
+    width: 220px;
+}
+
+/*
+|----------------------------------------------------------------------------
+| responsive
+|----------------------------------------------------------------------------
+*/
+@media screen and (max-width: 767px) {		
+	h2.form-title {
+		padding: 0 15px;
+	}
+	.form-wrap {
+		padding: 30px 0;
+	}
+}
+@media screen and (max-width: 480px) {
+	.col-xs-6 {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 420px) {
+	#firstDigit #mathfirstnum, #secondDigit #mathsecondnum {
+		width: 20px;
+	}
+}
+@media screen and (max-width: 360px) {	
+	#multistepForm span.sub-text {
+		right: 30px;
+	}
+}
+@media screen and (max-width: 340px) {
+	.btn {
+		margin: 0 0 20px 10px;
+	}
+	.btn.btn-default.disable {
+		display: none;
+	}
+}

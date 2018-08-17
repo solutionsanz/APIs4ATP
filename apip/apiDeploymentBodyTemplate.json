@@ -1,0 +1,6 @@
+{
+  "action": "DEPLOY",
+  "description": "Deploying API into default API Gateway",
+  "gatewayId": "@API_GW_ID@",
+  "runtimeState": "ACTIVE"
+}

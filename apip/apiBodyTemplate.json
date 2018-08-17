@@ -1,0 +1,92 @@
+{
+  "implementation": {
+    "executions": {
+      "request": [
+        "1",
+        "6",
+        "5",
+        "2"
+      ],
+      "response": [
+        "3",
+        "4"
+      ]
+    },
+    "policies": [
+      {
+        "draft": false,
+        "id": "1",
+        "type": "o:ApiRequest",
+        "version": "1.0",
+        "config": {
+          "protocols": [
+            "HTTP"
+          ],
+          "url": "@API_URI@"
+        }
+      },
+      {
+        "draft": false,
+        "id": "2",
+        "type": "o:ServiceRequest",
+        "version": "1.0",
+        "config": {
+          "useProxy": false,
+          "url": "@INTERNAL_API@"
+        }
+      },
+      {
+        "id": "3",
+        "type": "o:ServiceResponse",
+        "version": "1.0",
+        "config": {}
+      },
+      {
+        "id": "4",
+        "type": "o:ApiResponse",
+        "version": "1.0",
+        "config": {}
+      },
+      {
+        "comments": "",
+        "draft": false,
+        "id": "5",
+        "type": "o:HeaderValidation",
+        "version": "1.0",
+        "config": {
+          "conjunction": "ANY",
+          "action": "REJECT",
+          "conditions": [
+            {
+              "headerName": "SHOULD_WORK",
+              "headerValue": "true",
+              "operator": "!="
+            }
+          ]
+        }
+      },
+      {
+        "comments": "",
+        "draft": false,
+        "id": "6",
+        "type": "o:KeyValidation",
+        "version": "1.0",
+        "config": {
+          "keysource": "HEADER",
+          "keyheader": "X-My-Api-Key"
+        }
+      }
+    ]
+  },
+  "version": "1.0", 
+  "publication": {
+    "portalUrl": "http://apics.oracle.com:7201/developers/apis/@API_URI@",
+    "state": "PUBLISHED",
+    "iterationId": "1"
+  },
+  "name": "@API_NAME@",
+  "details": {
+    "description": "@API_DESC@"
+  },
+  "state": "RELEASED"
+}
