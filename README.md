@@ -1,18 +1,18 @@
-Acorn project
+APIs 4 ATP project
 ------
 
-This repository contains Acorn project, that is a quick way to create REST APIs out of a CSV data file. 
+This repository contains APIs 4 ATP project, that is a quick way consume REST APIs to interact with Oracle Autonomous Database for Online Transaction Processing (ATP). 
 
-Containerise Acorn Application
+Containerise APIs 4 ATP Application
 ------
 
    - Ensure you have installed Vagrant on your laptop/PC. If you need help, [read this blog](https://redthunder.blog/2018/02/13/teaching-how-to-use-vagrant-to-simplify-building-local-dev-and-test-environments/). 
 
    - Download or Git clone this Github repo: 
 
-			git clone https://github.com/solutionsanz/acorn
+			git clone https://github.com/solutionsanz/APIs4ATP
 
-   - In a terminal window, go to where you cloned/downloaded the repository (acorn) – Notice that the Vagrantfile is already in there.
+   - In a terminal window, go to where you cloned/downloaded the repository (APIs 4 ATP) – Notice that the Vagrantfile is already in there.
 
     - Start up your Vagrant Dev VM:
 
@@ -38,7 +38,7 @@ Containerise Acorn Application
 
 	        docker build .
 
-    - Execute locally your new Docker Image of your Acorn Application:
+    - Execute locally your new Docker Image of your APIs 4 ATP Application:
 
 	        docker run --env-file setEnv -p 3000:3000 -it [image_id] 
 
@@ -58,7 +58,7 @@ Containerise Acorn Application
 
             Enter docker hub username, password and email.
 
-Deploy Acorn application in Kubernetes
+Deploy APIs 4 ATP application in Kubernetes
 ------
 
    - Go to where you have installed and configured **kubectl**.
@@ -67,23 +67,23 @@ Deploy Acorn application in Kubernetes
 
    - Download or Git clone this Github repo: 
 
-			git clone https://github.com/solutionsanz/acorn
+			git clone https://github.com/solutionsanz/APIs 4 ATP
 
-   - Go to where you cloned/downloaded the repository (acorn)
+   - Go to where you cloned/downloaded the repository (APIs 4 ATP)
 
     - Change directory to deploy
 
             cd deploy
 
-    - Deploy Acorn Kubernetes application resources (deployment, service, ingress)
+    - Deploy APIs 4 ATP Kubernetes application resources (deployment, service, ingress)
 
             ./deploy.sh
 
-    - Open up Kubernetes Dashboard UI or equivalent (e.g. WeaveScope) and validate all Acorn resources were deployed successfully.
+    - Open up Kubernetes Dashboard UI or equivalent (e.g. WeaveScope) and validate all APIs 4 ATP resources were deployed successfully.
 
-    - Test your application, open a browser and go to: **http://[LB|IP]/acorn/ws/** - Test your app. 
+    - Test your application, open a browser and go to: **http://[LB|IP]/APIs 4 ATP/ws/** - Test your app. 
     
-    - Upload some data via the CSV file uploader, then open up the included Swagger UI **http://[LB|IP]/acorn/** and play with the various APIs.
+    - Upload some data via the CSV file uploader, then open up the included Swagger UI **http://[LB|IP]/APIs 4 ATP/** and play with the various APIs.
     
             Authenticate as: demo
     

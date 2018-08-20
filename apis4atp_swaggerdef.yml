@@ -1,0 +1,200 @@
+swagger: "2.0"
+info:
+  description: "This project provides a platform to interact via REST APIs with Oracle Autonomous Transaction Procesing Database (ATP)."
+  version: "2.1.0"
+  title: "APIs 4 ATP Demo"
+  #termsOfService: "http://apismadeeasy.cloud/terms"
+  contact:
+    email: "carlos.rodriguez.iturria@oracle.com"
+  #license:
+  #  name: "Apache 2.0"
+  #  url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+basePath: "/"
+host: "localhost:3000"
+#basePath: "/api/saasdemo"
+#host: "apipdev.oracleau.cloud"
+tags:
+- name: "Orders"
+  description: "Orders occur when a Contact requests a Gift or Promo resource."
+  externalDocs:
+    description: "Find out more"
+    url: "http://apismadeeasy.cloud"
+schemes:
+#- "https"
+- "http"
+security:
+  - X-MyAPI-Key: []
+paths:
+  /orders:
+    get:
+      tags:
+      - "Orders"
+      summary: "Finds all available Orders."
+      description: "Gets all orders"
+      operationId: "getOrders"
+      produces: 
+        - "application/json"
+      parameters:
+      - name: "orderId"
+        in: "query"
+        description: "Field name used to filter the order record to be returned."
+        required: false
+        type: "string"
+        x-example: '12345678ABCDEF'
+      responses:
+        200:
+          description: "Returns the full list of Orders."
+          schema:
+            properties:
+              Orders:
+                type: "array"
+                items:
+                  $ref: "#/definitions/OrderResponse"
+    post:
+      tags:
+      - "Orders"
+      summary: "Creates new available Order(s) to choose from."
+      description: "Returns the Id and the new Order(s)."
+      operationId: "postOrders"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Array of Order(s) that need to be added."
+        required: true
+        schema:
+            properties:
+              Orders:
+                type: "array"
+                items:
+                  $ref: "#/definitions/OrderRequest"
+      responses:
+        200:
+          description: "Returns the Id and the just created Order(s)."
+          schema:
+            properties:
+              Orders:
+                type: "array"
+                items:
+                  $ref: '#/definitions/OrderResponse'
+                  
+  /orders/{id}/status:
+    put:
+      tags:
+      - "Orders"
+      summary: "Updates Order status."
+      description: "Returns the Id and the new Order(s)."
+      operationId: "updateOrderStatus"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "Id for oder record to be updated."
+        required: true
+        type: "string"
+        x-example: '1a23ee45f678af121bfe1245aa'            
+      - in: "body"
+        name: "body"
+        description: "Status of Order to be updated to."
+        required: true
+        schema:
+            properties:
+              Order:
+                type: "object"
+                required:
+                - "Status"
+                properties:
+                  Status:
+                    type: "string"
+                    example: "closed"  
+      responses:
+        200:
+          description: "Returns the Id and the updated order."
+          schema:
+            properties:
+              Order:
+                type: "object"
+                required:
+                - "_id"
+                properties:
+                  _id:
+                    type: "string"
+                    example: "12345678abcdef"                
+
+securityDefinitions:
+  X-MyAPI-Key:
+    type: "apiKey"
+    name: "x-api-key"
+    in: "header"
+definitions:
+  OrderRequest:
+    type: "object"
+    required:
+    - "Product"
+    - "Organization"
+    - "Shipment"
+    - "Quantity"
+    - "UnitPrice"
+    - "Contact"
+    properties:
+      Product:
+        type: "string"
+        example: "Holy Socks"
+      Organization:
+        type: "string"
+        example: "Bmart"
+      Shipment:
+        type: "string"
+        example: "20 John Martin Sox"
+      Quantity:
+        type: "integer"
+        example: "35"
+      UnitPrice:
+        type: "number"
+        example: 99.99
+      Contact:
+        type: "string"
+        example: "jules.verne@sox.com"   
+
+  OrderResponse:
+    type: "object"
+    required:
+    - "OrderId"
+    - "Product"
+    - "Organization"
+    - "Shipment"
+    - "Quantity"
+    - "UnitPrice"
+    - "Contact"
+    properties:
+      OrderId:
+        type: "string"
+        example: "12345678abcdef"
+      Product:
+        type: "string"
+        example: "Holy Socks"
+      Organization:
+        type: "string"
+        example: "Bmart"
+      Shipment:
+        type: "string"
+        example: "20 John Martin Sox"
+      Quantity:
+        type: "integer"
+        example: "35"
+      UnitPrice:
+        type: "number"
+        example: 99.99
+      Contact:
+        type: "string"
+        example: "jules.verne@sox.com"
+            
+externalDocs:
+  description: "Find out more about our APIs"
+  url: "http://apisMadeEasy.cloud"

@@ -1,8 +1,8 @@
 #!/bin/bash
 #microservices..
-  #acorn..
-  #git clone --quiet https://github.com/solutionsanz/acorn >>/tmp/noise.out && cd acorn
-  kubectl create namespace acorn >>/tmp/noise.out
-  kubectl create -f kubernetes/acorn-dpl.yaml >>/tmp/noise.out
-  kubectl create -f kubernetes/acorn-svc.yaml >>/tmp/noise.out
-  kubectl create -f kubernetes/acorn-ing.yaml >>/tmp/noise.out
+  #apis4atp..
+  #git clone --quiet https://github.com/solutionsanz/apis4atp >>/tmp/noise.out && cd apis4atp
+  kubectl create namespace apis4atp >>/tmp/noise.out
+  kubectl create -f kubernetes/apis4atp-dpl.yaml >>/tmp/noise.out
+  kubectl create -f kubernetes/apis4atp-svc.yaml >>/tmp/noise.out
+  kubectl create -f kubernetes/apis4atp-ing.yaml >>/tmp/noise.out

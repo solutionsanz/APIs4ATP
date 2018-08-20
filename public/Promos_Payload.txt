@@ -1,0 +1,59 @@
+{
+  "Promos": [
+    {
+      "Name": "ERP Cloud",
+      "Type": "Whitepaper",
+      "Reference": "https://cloud.oracle.com/_downloads/WhitePaper_ERP_ImplLeadPract_es_ES/Oracle-ERP-Cloud-Implementation-Leading-Practices-white-paper.pdf",
+      "Category": "Promo"
+    },
+    {
+      "Name": "CX Cloud",
+      "Type": "Whitepaper",
+      "Reference": "https://cloud.oracle.com/_downloads/WhitePaper_ERP_ImplLeadPract_es_ES/Oracle-ERP-Cloud-Implementation-Leading-Practices-white-paper.pdf",
+      "Category": "Promo"
+    },
+    {
+      "Name": "HCM Cloud",
+      "Type": "Whitepaper",
+      "Reference": "https://cloud.oracle.com/_downloads/WhitePaper_ERP_ImplLeadPract_es_ES/Oracle-ERP-Cloud-Implementation-Leading-Practices-white-paper.pdf",
+      "Category": "Promo"
+    },
+    {
+      "Name": "Integration",
+      "Type": "Video",
+      "Reference": "https://docs.oracle.com/en/cloud/paas/integration-cloud-service/videos.html",
+      "Category": "Catalog"
+    },
+    {
+      "Name": "Process",
+      "Type": "Whitepaper",
+      "Reference": "http://www.oracle.com/us/technologies/bpm/process-cloud-service-ds-2489699.pdf",
+      "Category": "Catalog"
+    },
+    {
+      "Name": "Mobile",
+      "Type": "Youtube",
+      "Reference": "https://www.youtube.com/watch?v=6pCIHx9OKqs",
+      "Category": "Catalog"
+    },
+    {
+      "Name": "Chatbot",
+      "Type": "Youtube",
+      "Reference": "https://www.youtube.com/watch?v=qXxm854NOvI",
+      "Category": "Catalog"
+    },
+    {
+      "Name": "Blockchain",
+      "Type": "Youtube",
+      "Reference": "https://www.youtube.com/watch?v=r43LhSUUGTQ",
+      "Category": "Catalog"
+    },
+    {
+      "Name": "Jokes",
+      "Type": "SMS",
+      "Reference": "http://apismadeeasy.cloud",
+      "Category": "Catalog"
+    }
+
+  ]
+}

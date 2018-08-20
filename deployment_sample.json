@@ -14,10 +14,7 @@
         "MONGODB_SERVER":"XXX",
         "MONGODB_USERNAME":"XXX",
         "MONGODB_PASSWORD":"XXX",
-        "MONGODB_PORT":"XXX",
-        "SMS_SERVER":"XXXX",
-        "SMS_PORT":"XXX",
-        "SMS_PATH":"XXX"
+        "MONGODB_PORT":"XXX"
     }
 
 }

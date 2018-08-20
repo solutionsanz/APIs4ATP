@@ -24,5 +24,5 @@ console.log("PORT=" + config.PORT);
 
  server.listen(config.PORT, function () {
 
-     console.log('APIs 4 Acorn Application - API server running on port ' + config.PORT + "!!!");
+     console.log('APIs 4 SaaS Demo - API server running on port ' + config.PORT + "!!!");
  });

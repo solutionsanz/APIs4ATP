@@ -9,25 +9,25 @@ var config = require('./config');
 var app = express();
 
 
-// New Code
-var mongo = require('mongodb');
-var monk = require('monk');
-var MONGODB_CREDENTIALS = "";
+// MongoDB connection:
+// var mongo = require('mongodb');
+// var monk = require('monk');
+// var MONGODB_CREDENTIALS = "";
 
-if ((config.MONGODB_USERNAME != null && config.MONGODB_PASSWORD != null &&
-        config.MONGODB_USERNAME != undefined && config.MONGODB_PASSWORD != undefined) &&
-    config.MONGODB_USERNAME != "NA" && config.MONGODB_PASSWORD != "NA") {
+// if ((config.MONGODB_USERNAME != null && config.MONGODB_PASSWORD != null &&
+//         config.MONGODB_USERNAME != undefined && config.MONGODB_PASSWORD != undefined) &&
+//     config.MONGODB_USERNAME != "NA" && config.MONGODB_PASSWORD != "NA") {
 
-    MONGODB_CREDENTIALS = config.MONGODB_USERNAME + ":" + config.MONGODB_PASSWORD + "@";
-    console.log("Connecting to MongoDB with username [" + config.MONGODB_USERNAME + "]");
-}
+//     MONGODB_CREDENTIALS = config.MONGODB_USERNAME + ":" + config.MONGODB_PASSWORD + "@";
+//     console.log("Connecting to MongoDB with username [" + config.MONGODB_USERNAME + "]");
+// }
 
 
-var db = monk(MONGODB_CREDENTIALS + config.MONGODB_SERVER + ':' + config.MONGODB_PORT + '/acorn');
+// var db = monk(MONGODB_CREDENTIALS + config.MONGODB_SERVER + ':' + config.MONGODB_PORT + '/api4saasdemo');
 
 // Converting YAML into JSON for Swagger UI loading purposes:
-var inputfile = 'apis-acorn.yml',
-    outputfile = 'apis-acorn.json';
+var inputfile = 'apis4atp_swaggerdef.yml',
+    outputfile = 'apis4atp_swaggerdef.json';
 
 swaggerFileDef = yaml.load(fs.readFileSync(inputfile, {
     encoding: 'utf-8'
@@ -37,11 +37,12 @@ swaggerFileDef = yaml.load(fs.readFileSync(inputfile, {
 //fs.writeFileSync(outputfile, JSON.stringify(swaggerFileDef, null, 2));
 
 
+// NodeJS DB set to app...
 // Make our db accessible to our router
-app.use(function (req, res, next) {
-    req.db = db;
-    next();
-});
+// app.use(function (req, res, next) {
+//     req.db = db;
+//     next();
+// });
 
 // Add headers
 app.use(function (req, res, next) {
@@ -64,7 +65,7 @@ app.use(function (req, res, next) {
 });
 
 //Include the html assets
-app.get('/acorn-apis/v1', function (req, res) {
+app.get('/anki-saasdemo-ext-apis/v1', function (req, res) {
 
     // Issuing dynamic updates:
     var isAPIGWSecured = false;
@@ -107,7 +108,6 @@ app.get('/acorn-apis/v1', function (req, res) {
 
 app.use('/', express.static(path.join(__dirname, 'swagger-dist')));
 app.use('/ws', express.static(path.join(__dirname, 'public')));
-//app.use('/upload', express.static(path.join(__dirname, 'public', 'upload.html')));
 
 
 // Configure routes and middleware for the application

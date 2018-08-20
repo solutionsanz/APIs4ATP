@@ -17,5 +17,7 @@ module.exports = {
     "MONGODB_USERNAME": process.env.MONGODB_USERNAME || "NA",
     "MONGODB_PASSWORD": process.env.MONGODB_PASSWORD || "NA",
 
+    "GMAIL_FROM" : process.env.GMAIL_FROM || "NA",
+
     "PORT": process.env.PORT || "3000"
 };

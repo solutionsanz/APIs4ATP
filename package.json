@@ -1,28 +1,29 @@
 {
   "name": "APIs4ATP",
   "version": "1.0.0",
-  "description": "APIs 4 Autonomous DB project",
+  "description": "NodeJS microservie that interacts with Oracle Autonomous Transaction Processing DB (ATP)",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
   "keywords": [
     "swagger",
-    "api"
+    "api",
+    "anki",
+    "medrec"
   ],
   "author": "Carlos Rodriguez Iturria",
   "license": "MIT",
   "engines" : { "node" : ">=4.1.0 <5.5.0" },
   "dependencies": {
     "body-parser": "^1.6.5",
-    "express": "*",    
+    "express": "^4.8.5",    
     "mongodb": "^2.2.24",
     "monk": "^4.0.0",
     "js-yaml": "^3.8.4",
-    "formidable": "*",
-    "fs": "*",
-    "csvtojson": "*",
-    "util": "*",
+    "google-translate-api": "*",
+    "gmail-sender-oauth" : "*",
+    "gmail-api-sync" : "*",
     "oracledb": "*"
   }
 }

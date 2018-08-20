@@ -22,9 +22,11 @@
     sudo usermod -G docker ubuntu    
     docker --version
 
-    #echo "########################################################################"
-    #echo "###################### Configuring Oracle DB Instant Client ##############################"
+    #echo "############################################################################################################"
+    #echo "########### Installing and Configuring Node-Oracledb with Oracle DB Instant Client ##############################"
+    #  See: https://oracle.github.io/node-oracledb/ 
 
-    # export LD_LIBRARY_PATH=/vagrant/oradbInstantClient
-    # sudo apt-get install libaio1
+    sudo apt-get install libaio1 -y
+
+    echo "export LD_LIBRARY_PATH=/vagrant/oradbInstantClient" >> /home/vagrant/.bashrc && echo "export TNS_ADMIN=/vagrant/oradbInstantClient/network/admin" >> /home/vagrant/.bashrc && bash
     # See: https://oracle.github.io/odpi/doc/installation.html#linux

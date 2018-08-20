@@ -1,7 +1,7 @@
 #!/bin/bash
 #microservices..
-  #acorn..
-  kubectl delete -f deploy/kubernetes/acorn-ing.yaml >>/tmp/noise.out
-  kubectl delete -f deploy/kubernetes/acorn-svc.yaml >>/tmp/noise.out
-  kubectl delete -f deploy/kubernetes/acorn-dpl.yaml >>/tmp/noise.out
-  kubectl delete namespace acorn >>/tmp/noise.out
+  #apis4atp..
+  kubectl delete -f deploy/kubernetes/apis4atp-ing.yaml >>/tmp/noise.out
+  kubectl delete -f deploy/kubernetes/apis4atp-svc.yaml >>/tmp/noise.out
+  kubectl delete -f deploy/kubernetes/apis4atp-dpl.yaml >>/tmp/noise.out
+  kubectl delete namespace apis4atp >>/tmp/noise.out
