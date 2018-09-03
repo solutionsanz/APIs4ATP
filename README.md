@@ -16,7 +16,7 @@ Containerise APIs 4 ATP Application
 
    - Start up your Vagrant Dev VM:
 
-        vagrant up
+			vagrant up
 
    - A new Ubuntu VM will be provisioned and a bootstrap script will install all required utilities (e.g. docker).
 
@@ -24,19 +24,19 @@ Containerise APIs 4 ATP Application
 
    - Go to your working directory (mounted from host OS).
 
-        cd /vagrant
+			cd /vagrant
 
    - Switch user to **ubuntu**
 
-        sudo su ubuntu
+			sudo su ubuntu
 
    - Containerise the application by using the provided Dockerfile:
 
-        docker build .
+			docker build .
 
    - Execute locally your new Docker Image of your APIs 4 ATP Application:
 
-        docker run --env-file setEnv -p 3000:3000 -it [image_id] 
+			docker run --env-file setEnv -p 3000:3000 -it [image_id] 
 
      Note, if you are unsure about the actual **image_id**, you can use **docker images** to gather all images being generated.
 
