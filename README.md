@@ -26,10 +26,6 @@ Containerise APIs 4 ATP Application
 
             cd /vagrant
 
-    - Use the setEnv_template to create your own environment properties file. As a minimum, make sure to set the MongoDB server, username and password.
-
-            cp setEnv_template setEnv && vi setEnv
-
     - Switch user to **ubuntu**
 
             sudo su ubuntu
@@ -46,45 +42,10 @@ Containerise APIs 4 ATP Application
 
         Also note that by default port 3000 was configured in by vagrant as part of your VM setup.
 
-    - In your host OS, open a browser and go to: http://localhost:3000/ws - Test your app. 
+    - In your host OS, open a browser and go to: http://localhost:3000 - Test your app. 
     
-    - Upload some data via the CSV file uploader, then open up the included Swagger UI (http://localhost:3000) and play with the various APIs.
-    
-            Authenticate as: demo
 
-    - Once you feel confortable with the Docker image, push it to Docker Hub. First, login to Docker Hub:
+For more information see the [full blog here](https://redthunder.blog/2018/08/22/teaching-how-to-get-microservices-to-consume-oracle-autonomous-transaction-processing-database-atp/)
 
-            docker login
-
-            Enter docker hub username, password and email.
-
-Deploy APIs 4 ATP application in Kubernetes
-------
-
-   - Go to where you have installed and configured **kubectl**.
-
-        Note: [Read this blog](https://redthunder.blog/2018/04/18/teaching-how-to-quickly-provision-a-dev-kubernetes-environment-locally-or-in-oracle-cloud/) if you need assistance to provision Kubernetes.
-
-   - Download or Git clone this Github repo: 
-
-			git clone https://github.com/solutionsanz/APIs 4 ATP
-
-   - Go to where you cloned/downloaded the repository (APIs 4 ATP)
-
-    - Change directory to deploy
-
-            cd deploy
-
-    - Deploy APIs 4 ATP Kubernetes application resources (deployment, service, ingress)
-
-            ./deploy.sh
-
-    - Open up Kubernetes Dashboard UI or equivalent (e.g. WeaveScope) and validate all APIs 4 ATP resources were deployed successfully.
-
-    - Test your application, open a browser and go to: **http://[LB|IP]/APIs 4 ATP/ws/** - Test your app. 
-    
-    - Upload some data via the CSV file uploader, then open up the included Swagger UI **http://[LB|IP]/APIs 4 ATP/** and play with the various APIs.
-    
-            Authenticate as: demo
     
 If you need any assistance, feel free to [contact me](https://www.linkedin.com/in/citurria/).
