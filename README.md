@@ -14,35 +14,35 @@ Containerise APIs 4 ATP Application
 
    - In a terminal window, go to where you cloned/downloaded the repository (APIs 4 ATP) – Notice that the Vagrantfile is already in there.
 
-    - Start up your Vagrant Dev VM:
+   - Start up your Vagrant Dev VM:
 
-	        vagrant up
+        vagrant up
 
-    - A new Ubuntu VM will be provisioned and a bootstrap script will install all required utilities (e.g. docker).
-    
-    - You can now **vagrant ssh** into it.
+   - A new Ubuntu VM will be provisioned and a bootstrap script will install all required utilities (e.g. docker).
 
-    - Go to your working directory (mounted from host OS).
+   - You can now **vagrant ssh** into it.
 
-            cd /vagrant
+   - Go to your working directory (mounted from host OS).
 
-    - Switch user to **ubuntu**
+        cd /vagrant
 
-            sudo su ubuntu
+   - Switch user to **ubuntu**
 
-    - Containerise the application by using the provided Dockerfile:
+        sudo su ubuntu
 
-	        docker build .
+   - Containerise the application by using the provided Dockerfile:
 
-    - Execute locally your new Docker Image of your APIs 4 ATP Application:
+        docker build .
 
-	        docker run --env-file setEnv -p 3000:3000 -it [image_id] 
+   - Execute locally your new Docker Image of your APIs 4 ATP Application:
 
-        Note, if you are unsure about the actual **image_id**, you can use **docker images** to gather all images being generated.
+        docker run --env-file setEnv -p 3000:3000 -it [image_id] 
 
-        Also note that by default port 3000 was configured in by vagrant as part of your VM setup.
+     Note, if you are unsure about the actual **image_id**, you can use **docker images** to gather all images being generated.
 
-    - In your host OS, open a browser and go to: http://localhost:3000 - Test your app. 
+     Also note that by default port 3000 was configured in by vagrant as part of your VM setup.
+
+   - In your host OS, open a browser and go to: http://localhost:3000 - Test your app. 
     
 
 For more information see the [full blog here](https://redthunder.blog/2018/08/22/teaching-how-to-get-microservices-to-consume-oracle-autonomous-transaction-processing-database-atp/)
