@@ -23,5 +23,8 @@ spec:
       containers:
       - name: apis4atp
         image: cciturria/apis4atp
+        env:
+        - name: NODE_ORACLEDB_CONNECTIONSTRING
+          value: "critestoltp1_low"
         ports:
         - containerPort: 3000
